@@ -11,6 +11,9 @@ class Calculadora:
 
     def suma(self):
         return self.valor1 + self.valor2
+    
+    def resta(self):
+        return self.valor1 - self.valor2
 
 
 if __name__== "__main__":
@@ -25,7 +28,12 @@ if __name__== "__main__":
     except ValueError:
         sys.exit("Los operandos tienen que ser números")
 
-    resultado=Operar.suma()
-    print(resultado)
+    if operador=="suma":
+        print(Operar.suma())
+
+    elif operador=="resta":
+        print(Operar.resta())
+    else:
+        print("Las operaciones disponibles son suma y resta")
 
     
