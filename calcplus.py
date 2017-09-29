@@ -14,7 +14,7 @@ if __name__== "__main__":
     lineas=fich.readlines()
     
     for linea in lineas:
-        Operacion=linea[:linea.find(',')]
+        operador=linea[:linea.find(',')]
         linea=linea[linea.find(',')+1:-1]
         Operandos=[]
         
@@ -22,5 +22,30 @@ if __name__== "__main__":
             Operandos.append(linea[:linea.find(',')])
             linea=linea[linea.find(',')+1:]
         Operandos.append(linea)
-        print(Operandos)   
+        
+        Total=Operandos[0]
+        Operandos=Operandos[1:]
+        
+        for Operando in Operandos:
+
+            try:
+                Operar = calcoohija.CalculadoraHija(float(Total), float(Operando))
+            except ValueError:
+                sys.exit("Los operandos tienen que ser números")
+            
+            if operador=="suma":
+                Total=Operar.suma()
+
+            elif operador=="resta":
+                Total=Operar.resta()
+
+            elif operador=="multiplica":
+                Total=Operar.multiplica()
+
+            elif operador=="divide":
+                Total=Operar.divide()
+            else:
+                print("Las operaciones disponibles son suma, resta, multiplica y divide")
+
+        print(Total)
 
