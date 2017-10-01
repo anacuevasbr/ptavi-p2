@@ -4,6 +4,7 @@
 import sys
 import calcoo
 
+
 class CalculadoraHija(calcoo.Calculadora):
 
     def multiplica(self):
@@ -15,7 +16,7 @@ class CalculadoraHija(calcoo.Calculadora):
         except ZeroDivisionError:
             sys.exit("Division by zero is not allowed")
 
-if __name__== "__main__":
+if __name__ == "__main__":
 
     if len(sys.argv) != 4:
         sys.exit("Input: python3 calc.py operando1 operador operando2")
@@ -27,17 +28,16 @@ if __name__== "__main__":
     except ValueError:
         sys.exit("Los operandos tienen que ser números")
 
-    if operador=="suma":
+    if operador == "suma":
         print(Operar.suma())
 
-    elif operador=="resta":
+    elif operador == "resta":
         print(Operar.resta())
 
-    elif operador=="multiplica":
+    elif operador == "multiplica":
         print(Operar.multiplica())
 
-    elif operador=="divide":
+    elif operador == "divide":
         print(Operar.divide())
     else:
-        print("Las operaciones disponibles son suma, resta, multiplica y divide")
-
+        print("operaciones: son suma, resta, multiplica y divide")
