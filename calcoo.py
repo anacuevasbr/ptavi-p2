@@ -3,20 +3,21 @@
 
 import sys
 
+
 class Calculadora:
-    
+
     def __init__(self, valor1, valor2):
-        self.valor1=valor1
-        self.valor2=valor2
+        self.valor1 = valor1
+        self.valor2 = valor2
 
     def suma(self):
         return self.valor1 + self.valor2
-    
+
     def resta(self):
         return self.valor1 - self.valor2
 
 
-if __name__== "__main__":
+if __name__ == "__main__":
 
     if len(sys.argv) != 4:
         sys.exit("Input: python3 calc.py operando1 operador operando2")
@@ -28,12 +29,10 @@ if __name__== "__main__":
     except ValueError:
         sys.exit("Los operandos tienen que ser números")
 
-    if operador=="suma":
+    if operador == "suma":
         print(Operar.suma())
 
-    elif operador=="resta":
+    elif operador == "resta":
         print(Operar.resta())
     else:
         print("Las operaciones disponibles son suma y resta")
-
-    
